@@ -5,25 +5,24 @@ import com.sun.javaws.IconUtil;
 public class Main {
 
     public static void main(String[] args) {
+        Cat.description = "This is regular cat!";
+        Cat.getDescription();
         Cat bobtail = new Cat("Tom", 7);
         bobtail.getInfo();
 
         Cat sphynx = new Cat("Jerry", 15);
         sphynx.getInfo();
-
-        Cat big = new Cat();
-        big.getInfo();
     }
 
-    static class Cat{
+     static class Cat{
 
         private String name;
         private int weight;
 
-        public Cat(){
-            this.name = "noName";
-            this.weight = 1;
-        }
+    //    public Cat(){
+    //        this.name = "noName";
+    //        this.weight = 1;
+    //    }
 
     //    public Cat(String name){
     //        System.out.println("hello from second constructor");
@@ -50,6 +49,12 @@ public class Main {
 
         public int getWeight() {
             return weight;
+        }
+
+        public static String description;
+
+        public static void getDescription(){
+            System.out.println(description);
         }
 
         public void getInfo(){
